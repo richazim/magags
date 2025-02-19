@@ -1,5 +1,5 @@
 import empty from '../assets/images/empty.png'
-import logo from '../assets/images/logo.png'
+import logo from '../assets/images/logo-full.png'
 import logoSmall from '../assets/images/logo-small.png'
 import path from '../assets/images/path.png'
 import profile from '../assets/images/profile.png'

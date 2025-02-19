@@ -57,7 +57,7 @@ const Welcome = () => {
               fontSize: moderateScale(20)
           }}
       >
-          Vous Cherchez des Gags{"\n"} <Text className="text-[#FF8E01] text-[30px]">Relax</Text> est la Réponse
+          Vous Cherchez des Gags{"\n"} <Text className="text-[#FF8E01] text-[30px]">MaGags</Text> est la Réponse
       </Text>
       <Text
           className="text-center"
