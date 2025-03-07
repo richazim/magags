@@ -1,6 +1,22 @@
 # Welcome 👋
 
-## Get started
+## <a name="table">Table of Contents</a>
+
+1. [Tech Stack](#tech-stack)
+2. [How To Launch The Project](#launch)
+
+
+## <a name="tech-stack">Tech Stack</a>
+
+- React Native
+- Expo
+- Nativewind
+- React Native Size Matters
+- React Native Animatable
+- Appwrite
+
+
+## <a name="launch">How To Launch The Project</a>
 
 1. Install dependencies
 
@@ -21,14 +37,3 @@ In the output, you'll find options to open the app in a
 - [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
 - [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
