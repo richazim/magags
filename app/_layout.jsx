@@ -1,5 +1,4 @@
 import React, {useEffect} from 'react';
-import {Text, View} from "react-native";
 import "../global.css";
 import {GlobalProvider} from "../context/GlobalProvider";
 import {SplashScreen, Stack} from "expo-router";
@@ -8,7 +7,7 @@ import { Provider as PaperProvider } from 'react-native-paper';
 
 SplashScreen.preventAutoHideAsync().catch(() => {});
 
-const RootLayout = () => {
+export const RootLayout = () => {
     let [loaded, error] = useFonts({
         'Poppins-Black': require('../assets/fonts/Poppins-Black.ttf'),
         'Poppins-Bold': require('../assets/fonts/Poppins-Bold.ttf'),
@@ -47,5 +46,3 @@ const RootLayout = () => {
   </GlobalProvider>
  );
 };
-
-export default RootLayout;
