@@ -60,24 +60,28 @@ const Profile = () => {
                          style={{
                              paddingHorizontal: moderateScale(24)
                          }}
+                         className="flex flex-col justify-between"
                      >
-                         <TouchableOpacity
-                             onPress={logoutUser}
-                             className="flex flex-row justify-end"
-                             style={{
-                                 marginTop: moderateScale(8)
-                             }}
-                         >
-                             <Image
-                                 source={icons.logout}
-                                 style={{
-                                     width: moderateScale(24),
-                                     height: moderateScale(24)
-                                 }}
-                                 resizeMode="contain"
-                                 className=""
-                             />
-                         </TouchableOpacity>
+                        <View className="relative h-[30px]">
+                            <TouchableOpacity
+                                onPress={logoutUser}
+                                className="absolute top-[50%] translate-y-[-50%] right-0"
+                                style={{
+                                    marginTop: moderateScale(8)
+                                }}
+                            >
+                                <Image
+                                    source={icons.logout}
+                                    style={{
+                                        width: moderateScale(24),
+                                        height: moderateScale(24)
+                                    }}
+                                    alt="logout"
+                                    resizeMode="contain"
+                                    className=""
+                                />
+                            </TouchableOpacity>
+                        </View>
 
                          <View
                              className="flex items-center"

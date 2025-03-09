@@ -7,7 +7,7 @@ import { Provider as PaperProvider } from 'react-native-paper';
 
 SplashScreen.preventAutoHideAsync().catch(() => {});
 
-export const RootLayout = () => {
+const RootLayout = () => {
     let [loaded, error] = useFonts({
         'Poppins-Black': require('../assets/fonts/Poppins-Black.ttf'),
         'Poppins-Bold': require('../assets/fonts/Poppins-Bold.ttf'),
@@ -46,3 +46,5 @@ export const RootLayout = () => {
   </GlobalProvider>
  );
 };
+
+export default RootLayout;
