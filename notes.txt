@@ -1,0 +1,3 @@
+Commande pour récupérer l'address Ip d'un mac:
+- ipconfig getifaddr en0
+
