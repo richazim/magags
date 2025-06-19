@@ -70,7 +70,8 @@ EXPO_PUBLIC_APPWRITE_STORAGE_BUCKET_ID=<votre_bucket_id>
 ```
 
 >Si vous développez sur Expo Go d'un mobile physique (et non dans le simulateur de votre pc ou mac), remplacez localhost par l’IP locale de votre machine, accessible depuis le téléphone.
-```
+
+```zsh
 APPWRITE_ENDPOINT=http://192.168.X.XXX/v1
 ```
 
@@ -92,3 +93,42 @@ Une fois le serveur Expo lancé, vous pouvez ouvrir l’application dans :
 - Émulateur Android
 - Simulateur iOS
 - Expo Go (dans votre téléphone mobile)
+
+## 📊 Base de données
+
+Ce projet utilise [https://appwrite.io](Appwrite) comme BaaS (Backend-as-a-Service). Vous avez la possibilité de lancer appwrite en local si vous disposer de docker déjà installer sur votre machine.
+
+## 🗄️ Tables à créer
+
+---
+
+### 🧑‍💼 `users`
+
+| Colonne       | Type        | Contraintes              | Description                  |
+|---------------|-------------|---------------------------|------------------------------|
+| `username`    | `String` | Required        | Nom d'utilisateur            |
+| `email`       | `Email` | Required       | Email de l'utilisateur       |
+| `avatarUrl`    | `Url`      |                  | Mot de passe hashé           |
+| `accountId`  | `TIMESTAMP` | Required | Identifiant d'authentification appwrite             |
+
+---
+
+### 🎞️ `videos`
+
+| Colonne       | Type        | Contraintes               | Description                  |
+|---------------|-------------|---------------------------|------------------------------|
+| `creatorId`     | `RELATIONSHIP`   | FK → `users.id`, NOT NULL | Auteur de la vidéo           |
+| `title`       | `VARCHAR(255)` | NOT NULL               | Titre de la vidéo            |
+| `thumbnailUrl` | `TEXT`      |                           | Description facultative      |
+| `videoUrl`   | `TEXT`      | NOT NULL                  | Chemin du fichier vidéo      |
+| `videoStorageId`  | `TIMESTAMP` | DEFAULT CURRENT_TIMESTAMP | Date d’ajout                 |
+| `thumbnailStorageId`  | `TIMESTAMP` | DEFAULT CURRENT_TIMESTAMP | Date d’ajout                 |
+
+---
+
+### ⭐ `favorites`
+
+| Colonne       | Type        | Contraintes                    | Description                  |
+|---------------|-------------|--------------------------------|------------------------------|
+| `userId`     | `INTEGER`   | FK → `users.id`, NOT NULL      | Utilisateur qui a bookmarké |
+| `videoId`    | `INTEGER`   | FK → `videos.id`, NOT NULL     | Vidéo bookmarkée             |
