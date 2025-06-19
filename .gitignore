@@ -40,3 +40,4 @@ app-example
 
 # ide
 .idea
+.vscode/
