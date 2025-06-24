@@ -2,8 +2,10 @@
 
 ## Sommaire
 
-1. [🧰 Stack technique](#stack-technique)  
-2. [🚀 Lancer le projet](#lancer-le-backend-appwrite-localement)
+1. [Stack technique](#stack-technique)  
+2. [Lancer le backend du projet](#lancer-le-backend-appwrite-localement)
+3. [Base de données et Bucket Appwrite](#base-de-données-et-bucket-appwrite)
+4. [Lancer le projet Expo](#lancer-le-projet-expo)
 
 ## Stack technique
 
@@ -20,9 +22,9 @@ Ce projet mobile est construit avec les technologies suivantes :
 
 L'application utilise [**Appwrite**](https://appwrite.io/) comme backend (authentification, base de données, stockage, etc.).
 
-### 🐳 Option recommandée : via Docker
+### Option recommandée : via Docker
 
-> Assurez-vous d'avoir **Docker** et **Docker Compose** installés sur votre machine.
+> Assurez-vous d'avoir **Docker** et **Docker Compose** installés sur votre machine. Pour cela, installer [**docker**](https://www.docker.com) sur votre machine.
 
 #### 1. **Cloner le dépôt**
 
@@ -48,13 +50,17 @@ docker compose up -d
 
 Rendez-vous sur [http://localhost:80](http://localhost:80) dans votre navigateur pour :
 
-- Créer un compte Appwrite local puis
-- Créer un projet Appwrite
-- ...
-
 #### 5. **Configuration du projet mobile**
 
-Dans votre app Expo, créez un fichier .env à la racine avec vos paramètres Appwrite :
+> Dans votre interface appwrite:
+
+- Créer un compte Appwrite local.
+- Créer un projet Appwrite puis copier l'identifiant du projet pour l'utiliser dans le fichier .env.
+- Ajouter une platforme au projet Appwrite de préférence la platforme Android puis copier également l'id du platforme pour pouvoir l'utiliser dans .env
+- Suivre la même procédé pour la création d'une base de donnée, ses tables.
+- Faire pareil également pour la création d'un bucket
+
+>Dans votre app Expo, votre fichier .env à la racine doit ressemblez à ça :
 
 ```env
 EXPO_PUBLIC_APPWRITE_ENDPOINT=http://localhost/v1
@@ -80,35 +86,15 @@ EXPO_PUBLIC_APPWRITE_STORAGE_BUCKET_ID=<votre_bucket_id>
 APPWRITE_ENDPOINT=http://192.168.X.XXX/v1
 ```
 
-## Démarrer le projet sur votre ordinateur
+## Base de données et Bucket Appwrite
 
-### 1. Installer les dépendances
+Vous avez la possibilité de configurer appwrite en local à partir du dossier **/appwrite** si vous disposer de docker déjà installer sur votre machine.
 
-```bash
-npm install
-```
-
-### 2. Démarrer l’application en local
-
-```bash
-npx expo start
-```
-
-Une fois le serveur Expo lancé, vous pouvez ouvrir l’application dans :
-
-- Émulateur Android
-- Simulateur iOS
-- Expo Go (dans votre téléphone mobile)
-
-## Base de données
-
-Ce projet utilise [https://appwrite.io](Appwrite) comme BaaS (Backend-as-a-Service). Vous avez la possibilité de lancer appwrite en local si vous disposer de docker déjà installer sur votre machine.
-
-## 🗄️ Tables à créer
+### Tables Appwrite à créer
 
 ---
 
-### `users`
+#### `users`
 
 | Colonne       | Type        | Contraintes              | Description                  |
 |---------------|-------------|---------------------------|------------------------------|
@@ -119,7 +105,7 @@ Ce projet utilise [https://appwrite.io](Appwrite) comme BaaS (Backend-as-a-Servi
 
 ---
 
-### `videos`
+#### `videos`
 
 | Colonne       | Type        | Contraintes               | Description                  |
 |---------------|-------------|---------------------------|------------------------------|
@@ -132,9 +118,35 @@ Ce projet utilise [https://appwrite.io](Appwrite) comme BaaS (Backend-as-a-Servi
 
 ---
 
-### `favorites`
+#### `favorites`
 
 | Colonne       | Type        | Contraintes                    | Description                  |
 |---------------|-------------|--------------------------------|------------------------------|
 | `userId`     | `INTEGER`   | FK → `users.id`, NOT NULL      | Utilisateur qui a bookmarké |
 | `videoId`    | `INTEGER`   | FK → `videos.id`, NOT NULL     | Vidéo bookmarkée             |
+
+### Bucket Appwrite
+
+---
+
+## Lancer le projet Expo
+
+### 1. Se placer à la racine du projet
+
+### 2. Installer les dépendances
+
+```bash
+npm install
+```
+
+### 3. Démarrer l’application en local
+
+```bash
+npx expo start
+```
+
+>Vous aurez la possibilité d'ouvrir l’application dans :
+
+- Émulateur Android
+- Simulateur iOS
+- Expo Go (dans votre téléphone mobile)
