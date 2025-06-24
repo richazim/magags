@@ -3,7 +3,7 @@
 ## Sommaire
 
 1. [🧰 Stack technique](#stack-technique)  
-2. [🚀 Lancer le projet](#lancer-le-projet)
+2. [🚀 Lancer le projet](#lancer-le-backend-appwrite-localement)
 
 ## Stack technique
 
@@ -16,7 +16,7 @@ Ce projet mobile est construit avec les technologies suivantes :
 - **React Native Animatable** — Animations simples et performantes  
 - **Appwrite** — Backend open-source (authentification, base de données, stockage, etc.)
 
-## 🧱 Lancer le backend Appwrite localement
+## Lancer le backend Appwrite localement
 
 L'application utilise [**Appwrite**](https://appwrite.io/) comme backend (authentification, base de données, stockage, etc.).
 
@@ -24,34 +24,39 @@ L'application utilise [**Appwrite**](https://appwrite.io/) comme backend (authen
 
 > Assurez-vous d'avoir **Docker** et **Docker Compose** installés sur votre machine.
 
-1. **Cloner le dépôt**
+#### 1. **Cloner le dépôt**
 
 ```bash
 git clone https://github.com/richazim/magags.git
+```
+
+#### 2. **Allez dans le dossier appwrite**
+
+```bash
 cd appwrite
 ```
 
-2. **Allez dans le dossier appwrite**
-
-3. **Démarrer les services Appwrite**
+#### 3. **Démarrer les services Appwrite**
 
 ```bash
 docker compose up -d
 ```
->Par défaut, l'interface Appwrite sera disponible sur http://localhost:80.
 
-4. **Accéder à l'interface Appwrite**
+>Par défaut, l'interface Appwrite sera disponible sur [http://localhost:80](http://localhost:80).
 
-Rendez-vous sur http://localhost dans votre navigateur pour :
+#### 4. **Accéder à l'interface Appwrite**
+
+Rendez-vous sur [http://localhost:80](http://localhost:80) dans votre navigateur pour :
+
 - Créer un compte Appwrite local puis
 - Créer un projet Appwrite
 - ...
 
-5. **Configuration du projet mobile**
+#### 5. **Configuration du projet mobile**
 
 Dans votre app Expo, créez un fichier .env à la racine avec vos paramètres Appwrite :
 
-```python
+```env
 EXPO_PUBLIC_APPWRITE_ENDPOINT=http://localhost/v1
 
 EXPO_PUBLIC_APPWRITE_PROJECT_ID=<votre_project_id>
@@ -75,7 +80,7 @@ EXPO_PUBLIC_APPWRITE_STORAGE_BUCKET_ID=<votre_bucket_id>
 APPWRITE_ENDPOINT=http://192.168.X.XXX/v1
 ```
 
-## Démarrer le projet
+## Démarrer le projet sur votre ordinateur
 
 ### 1. Installer les dépendances
 
@@ -88,13 +93,14 @@ npm install
 ```bash
 npx expo start
 ```
+
 Une fois le serveur Expo lancé, vous pouvez ouvrir l’application dans :
 
 - Émulateur Android
 - Simulateur iOS
 - Expo Go (dans votre téléphone mobile)
 
-## 📊 Base de données
+## Base de données
 
 Ce projet utilise [https://appwrite.io](Appwrite) comme BaaS (Backend-as-a-Service). Vous avez la possibilité de lancer appwrite en local si vous disposer de docker déjà installer sur votre machine.
 
@@ -102,7 +108,7 @@ Ce projet utilise [https://appwrite.io](Appwrite) comme BaaS (Backend-as-a-Servi
 
 ---
 
-### 🧑‍💼 `users`
+### `users`
 
 | Colonne       | Type        | Contraintes              | Description                  |
 |---------------|-------------|---------------------------|------------------------------|
@@ -113,7 +119,7 @@ Ce projet utilise [https://appwrite.io](Appwrite) comme BaaS (Backend-as-a-Servi
 
 ---
 
-### 🎞️ `videos`
+### `videos`
 
 | Colonne       | Type        | Contraintes               | Description                  |
 |---------------|-------------|---------------------------|------------------------------|
@@ -126,7 +132,7 @@ Ce projet utilise [https://appwrite.io](Appwrite) comme BaaS (Backend-as-a-Servi
 
 ---
 
-### ⭐ `favorites`
+### `favorites`
 
 | Colonne       | Type        | Contraintes                    | Description                  |
 |---------------|-------------|--------------------------------|------------------------------|
