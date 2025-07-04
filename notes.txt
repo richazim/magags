@@ -1,0 +1,21 @@
+# Supprime le cache et relance tout
+npx expo start --clear
+
+
+
+Commande pour récupérer l'address Ip d'un mac:
+- ipconfig getifaddr en0
+
+
+Problème:  'PlatformConstants' could not be found. Verify that a module by this name is registered in the native binary.Bridgeless mode: true. TurboModule interop: false.
+Solution de github appwrite/sdk-for-react-native: Dans package.json:
+  "overrides": {
+    "react-native-appwrite": {
+      "expo-file-system": "18..",
+      "react-native": ">=0.76.0 <1.0.0"
+    }
+  }
+Puis exécuter les commandes:
+rm -rf .expo node_modules
+npm install
+npx expo start --clear
