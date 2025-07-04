@@ -15,6 +15,7 @@ Ce projet mobile est construit avec les technologies suivantes :
 - **Expo** — Outils de développement, compilation et déploiement  
 - **Nativewind** — Utilisation de Tailwind CSS dans React Native  
 - **React Native Size Matters** — Gestion responsive des tailles d’éléments  
+- **React Native Papper** — UI réellement adaptative
 - **React Native Animatable** — Animations simples et performantes  
 - **Appwrite** — Backend open-source (authentification, base de données, stockage, etc.)
 
